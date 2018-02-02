@@ -66,7 +66,7 @@
                     <div style="height: 10px;"></div>
                             <img src="images/img41.jpg" class="img_l" alt="" /><span class="span_cont">Más Links</span><br />
 							Somos una empresa dedicada al desarrollo de aplicaciones web, utilizamos los mejores lenguajes de programación y entornos de desarrollo, ofrecemos un servicio económico pensando las pequeñas y medianas empresas que desean migrar su negocio al Internet.
-							<BR/>Nuestro propósito como empresa es proporcionarle las herramientas para que su negocio crezca y pueda ser visto las 24 horas del día, 7 días a la semana mediante las nuevas Tecnologías de la Información en este caso el Internet. Recuerde que brindarle un excelente servicio es nuestro deber, así que no dude en escribirnos o visitarnos.
+							<BR/>Nuestro propósito como empresa es proporcionarle las herramientas para que su negocio crezca y pueda ser visto las 24 horas del día, 7 días a la semana mediante las nuevas Tecnologías  en este caso el Internet. Recuerde que brindarle un excelente servicio es nuestro deber, así que no dude en escribirnos o visitarnos.
  
                           <div style="height: 10px;"></div>
                             <div style="height:20px;">
@@ -161,7 +161,47 @@
 <!-- bottom end --> 
 <!-- footer begins -->
             <div id="footer">
-          Copyright  2018. Designed by :  <a href="http://maslinks.ml/" title="Más Links">Más Links</a><br />
+				<script>
+function cambiarTrack(track) {
+   var path =  track.getAttribute("path")
+   viejo_audio = document.getElementById("reproductor")
+   audio_padre = viejo_audio.parentNode
+   audio_padre.removeChild(viejo_audio)
+   nuevo_audio = document.createElement("audio")
+   nuevo_audio.setAttribute("id","reproductor")
+   nuevo_audio.setAttribute("controls", "controls")
+   nuevo_audio.setAttribute("autoplay", "autoplay")
+   source = document.createElement("source")
+   source.setAttribute("src", path)
+   source.setAttribute("type", "audio/mpeg")
+   source.setAttribute("id", "reproductorSource")
+   nuevo_audio.appendChild(source)
+   audio_padre.appendChild(nuevo_audio)}
+function cargarReproductor() {
+         var select = document.getElementById("selectTrack")
+         var path = select.options[0].getAttribute("path")
+   nuevo_audio = document.createElement("audio")
+   nuevo_audio.setAttribute("id","reproductor")
+   nuevo_audio.setAttribute("controls", "controls")
+   nuevo_audio.setAttribute("autoplay", "autoplay")   
+   source = document.createElement("source")
+   source.setAttribute("src", path)
+   source.setAttribute("type", "audio/mpeg")
+   source.setAttribute("id", "reproductorSource")
+   nuevo_audio.appendChild(source)
+   padre = document.getElementById("reproductorBox")
+   padre.appendChild(nuevo_audio)
+}
+</script>
+<div id="reproductorBox" ></div>
+<select id = "selectTrack" multiple onchange="cambiarTrack(this.options[this.selectedIndex]);">
+<option path="music/take-on-me.mp3">Ah Ah - Take on me</option>
+<option path="music/Flo Rida - Good Feeling.mp3">Flo Rida - Good Feeling</option>
+<option path="music/dust-in-the-wind.mp3">Kansas - Dust in the wind</option>
+<option path="music/how-deep-is-your-love.mp3">Bee Geees - How deep is your love</option>
+</select>
+<script>cargarReproductor();</script><br/>
+         <FONT FACE="Impact"><MARQUEE DIRECTION=RIGHT BEHAVIOR=ALTERNATE SCROLLDELAY =200> Copyright  2018. Designed by :  <a href="http://maslinks.ml/" title="Más Links">Más Links</a></MARQUEE></FONT><br />
         <!-- footer ends -->
 </div>
 
