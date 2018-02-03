@@ -14,7 +14,7 @@
 <!-- header begins -->
 <div id="header">
 	<div id="logo">
-    	<a href="#"><FONT FACE="Impact"><MARQUEE BEHAVIOR=ALTERNATE SCROLLDELAY =200> Mas Links para todos </MARQUEE></FONT></a>
+     	<a href="http://maslinks.ml/"><FONT FACE="Impact"><MARQUEE BEHAVIOR=ALTERNATE SCROLLDELAY =200> <img src="images/banner.jpg" alt="" /> </MARQUEE></FONT></a>
       	<h1><a href="http://maslinks.ml/"><MARQUEE>Ing. Ángel Hurtado Propietario y Creador de "Mas Links para todos" le da un cordial saludo</MARQUEE></a></h1>
     </div>
    <div id="buttons">
@@ -22,7 +22,6 @@
       <a href="gallery.html"  class="but" title="">Galería</a><div class="but_razd"></div>
       <a href="about_us.html"  class="but" title="">Empresa</a><div class="but_razd"></div>
       <a href="contact_us.html" class="but" title="">Contáctenos</a>
-	  <a href="http://www.facebook.com/afhp/" class="but" title="">Facebook</a><div class="but_razd"></div>
     </div>
 </div>
 <!-- header ends -->
@@ -79,14 +78,16 @@
                	    <div id="left">
                         <h1>Contáctenos</h1>
                         <div style="height:20px"></div>  
-                        <form action="" method="post">
-                            <div style="height:30px;"><label>Nombre</label><input class="input_txt2" value="" name="Name" type="text" /></div><div style="height:10px"></div>
-                            <div style="height:30px;"><label>Correo</label><input class="input_txt2" value="" name="E-mail" type="text" /></div><div style="height:10px"></div>
-                            <div style="height:30px;"><label>Asunto</label><input class="input_txt2" value="" name="Name" type="text" /></div><div style="height:10px"></div>     
-                            <div><textarea class="text_area2" cols="32" rows="3" name="Message"></textarea></div>
+                        <form action="mailto:af_hp@live.com" method="post" enctype="text/plain">
+                            <div style="height:30px;"><label>Nombre</label><input class="input_txt2" value="" name="Nombre" type="text"></div><div style="height:10px"></div>
+                            <div style="height:30px;"><label>Correo</label><input class="input_txt2" value="" name="Correo" type="text"></div><div style="height:10px"></div>
+                            <div style="height:30px;"><label>Asunto</label><input class="input_txt2" value="" name="Asunto" type="text"></div><div style="height:10px"></div>
+							<div style="height:30px;"><label>Teléfono</label><input class="input_txt2" value="" name="Teléfono" type="text"></div><div style="height:10px"></div>
+                            <div><textarea class="text_area2" cols="32" rows="3" name="Mensaje"></textarea></div>
                             <div style="height:15px;"></div>
                             <div style="height:17px;">
-                              <input class="submit2" name="send" type="submit" value="Enviar" /><input class="submit2" name="reset" type="submit" value="Limpiar" />
+                              <input class="submit2" type="submit" value="Enviar">
+							  <input class="submit2" type="reset" value="Limpiar">
                             </div>
                             <div style="height:10px;"></div>
                         </form>
@@ -126,11 +127,12 @@
       <div id="b_col3">
       		<h1>Déjanos un Mensaje</h1>
             <div style="height:15px"></div>
-			<form action="" method="post">
-                <div style="height:30px;"><label>Nombre</label><input class="input_txt" value="" name="Name" type="text" /></div><div style="height:5px"></div>
-                <div style="height:30px;"><label>E-mail</label><input class="input_txt" value="" name="E-mail" type="text" /></div><div style="height:5px"></div>
-                      <div><textarea class="text_area" cols="32" rows="3" name="Message"></textarea></div>
-                <div style=" float:left;"><input class="submit" name="Submit" type="submit" value="Enviar" /></div>
+			<form action="mailto:af_hp@live.com" method="post" enctype="text/plain">
+                <div style="height:30px;"><label>Nombre</label><input class="input_txt" value="" name="Nombre" type="text" /></div><div style="height:5px"></div>
+                <div style="height:30px;"><label>E-mail</label><input class="input_txt" value="" name="Correo" type="text" /></div><div style="height:5px"></div>
+				<div style="height:30px;"><label>Teléfono</label><input class="input_txt" value="" name="Teléfono" type="text" /></div><div style="height:5px"></div>
+                      <div><textarea class="text_area" cols="32" rows="3" name="Mensaje"></textarea></div>
+                <div style=" float:left;"><input class="submit" type="submit" value="Enviar" /></div>
            </form>
       </div>
       <div style="clear: both;"></div>
@@ -140,48 +142,11 @@
 <!-- bottom end --> 
 <!-- footer begins -->
             <div id="footer">
-				<script>
-function cambiarTrack(track) {
-   var path =  track.getAttribute("path")
-   viejo_audio = document.getElementById("reproductor")
-   audio_padre = viejo_audio.parentNode
-   audio_padre.removeChild(viejo_audio)
-   nuevo_audio = document.createElement("audio")
-   nuevo_audio.setAttribute("id","reproductor")
-   nuevo_audio.setAttribute("controls", "controls")
-   nuevo_audio.setAttribute("autoplay", "autoplay")
-   source = document.createElement("source")
-   source.setAttribute("src", path)
-   source.setAttribute("type", "audio/mpeg")
-   source.setAttribute("id", "reproductorSource")
-   nuevo_audio.appendChild(source)
-   audio_padre.appendChild(nuevo_audio)}
-function cargarReproductor() {
-         var select = document.getElementById("selectTrack")
-         var path = select.options[0].getAttribute("path")
-   nuevo_audio = document.createElement("audio")
-   nuevo_audio.setAttribute("id","reproductor")
-   nuevo_audio.setAttribute("controls", "controls")
-   nuevo_audio.setAttribute("autoplay", "autoplay")   
-   source = document.createElement("source")
-   source.setAttribute("src", path)
-   source.setAttribute("type", "audio/mpeg")
-   source.setAttribute("id", "reproductorSource")
-   nuevo_audio.appendChild(source)
-   padre = document.getElementById("reproductorBox")
-   padre.appendChild(nuevo_audio)
-}
-</script>
-<div id="reproductorBox" ></div>
-<select id = "selectTrack" multiple onchange="cambiarTrack(this.options[this.selectedIndex]);">
-<option path="music/Flo Rida - Good Feeling.mp3">Flo Rida - Good Feeling</option>
-<option path="music/take-on-me.mp3">Ah Ah - Take on me</option>
-<option path="music/dust-in-the-wind.mp3">Kansas - Dust in the wind</option>
-<option path="music/how-deep-is-your-love.mp3">Bee Geees - How deep is your love</option>
-</select>
-<script>cargarReproductor();</script><br/>
+			<audio src="music/dust-in-the-wind.mp3" controls="controls" type="audio/mpeg" preload="preload" AUTOPLAY="AUTOPLAY">
+</audio><br/>
          <FONT FACE="Impact"><MARQUEE DIRECTION=RIGHT BEHAVIOR=ALTERNATE SCROLLDELAY =200> Copyright  2018. Designed by :  <a href="http://maslinks.ml/" title="Mas Links">Mas Links</a></MARQUEE></FONT><br />
         <!-- footer ends -->
+	
 </div>
 
 </div>
