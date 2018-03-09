@@ -35,7 +35,7 @@ body{
 
 #logo {	
 		height: 52px;
-		padding: 10px 0px 0px 800px;
+		padding: 5px 0px 0px 375px;
 }
 
 #logo H2 {
@@ -98,9 +98,9 @@ body{
 	color: #949494;
 	background:url(images/but_hov.png) center 7px no-repeat;
 	}
-	
+	/* carrusel de fotos */
 .top { height: 360px;
-padding-top: 20px
+padding-top: 50px
 	}
 
 .top_text {
